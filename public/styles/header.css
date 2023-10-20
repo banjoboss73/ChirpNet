@@ -1,0 +1,22 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #3e5075;
+  background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");
+  height: 400px;
+  width: 100%;
+}
+.user h2 {
+  margin: 0px;
+  color: #FFFFFF;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media (min-width: 1024px) {
+  .user {
+    margin: 50px;
+    width: 50%;
+  }
+}

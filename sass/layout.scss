@@ -1,0 +1,112 @@
+@use "partial";
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  color: partial.$tweet-box-color;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: partial.$font-1;
+  padding-top: 120px;
+}
+
+.toggleButton {
+  color: partial.$bg-color;
+  left: 93.5vw;
+  top: 93.5vh;
+  z-index: 100;
+  position: fixed;
+  transform: scale(3);
+  cursor: pointer;
+}
+
+.invalidTweet {
+  color: partial.$important-color;
+}
+
+.tweetControl {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: partial.$font-2;
+  font-size: 24px;
+
+  button {
+    background-color: partial.$bg-color;
+    color: partial.$text-color;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    box-shadow: 5px 5px partial.$tweet-box-color;
+  }
+}
+
+#tweet-text {
+  background-color: transparent;
+  width: 100%;
+  overflow: auto;
+  outline: none;
+  resize: none;
+  border-style: none;
+  border-bottom: 5px solid partial.$tweet-box-color;
+}
+
+.errorEmpty,
+.errorOverLimit {
+  color: partial.$important-color;
+  font-weight: bolder;
+  border: 5px solid partial.$important-color;
+  padding: 10px;
+  margin: 10px;
+}
+
+.errorMessage {
+  @include partial.verticalCenterAlign();
+}
+
+.new-tweet {
+  width: 100%;
+  padding: 1.5em;
+
+  label {
+    font-family: partial.$font-1;
+    font-weight: bold;
+  }
+}
+
+main {
+  background-color: #f4f1ec;
+  @include partial.verticalCenterAlign();
+  width: 90vw;
+  margin: auto;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+  .new-tweet {
+    padding-top: 0;
+  }
+}

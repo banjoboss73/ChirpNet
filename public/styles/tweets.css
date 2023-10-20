@@ -1,0 +1,68 @@
+.fa-heart:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.fa-retweet:hover {
+  color: green;
+  cursor: pointer;
+}
+
+.fa-flag:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.tweet:hover {
+  box-shadow: 5px 5px #545149;
+}
+
+.tweet {
+  border: 5px solid #545149;
+  margin-top: 10px;
+  padding: 1.5em;
+  word-wrap: break-word;
+}
+.tweet header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tweet header img {
+  margin-right: 0.5em;
+}
+.tweet header .handleName {
+  font-weight: bold;
+  opacity: 0.2;
+}
+.tweet header .handleName:hover {
+  cursor: pointer;
+}
+.tweet .userInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tweet footer {
+  border-top: 5px solid #545149;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 0.5em;
+}
+.tweet footer i {
+  margin-left: 5px;
+}
+
+.tweet-container {
+  width: 100%;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media (min-width: 1024px) {
+  .container {
+    margin: 50px;
+    width: 50%;
+  }
+}

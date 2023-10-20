@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>chirpNet - Home Page</title>
+
+    <!-- External CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
+
+    <!-- Custom Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+  </head>
+
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav>
+      <span>ChirpNet</span>
+      <div class="navNewTweet">
+        <label><b>Share</b> your thoughts</label>
+        <i class="fa-solid fa-angles-down" id="downArrow"></i>
+      </div>
+    </nav>
+
+    <!-- user information -->
+    <header class="user">
+      <div>
+        <img src="/images/profile-hex.png" />
+      </div>
+      <div>
+        <h2>Ayush Penkar</h2>
+      </div>
+    </header>
+
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <!-- error messages -->
+      <section class="errorMessage">
+        <label for="errorEmpty" class="errorEmpty"
+          ><i class="fa-solid fa-triangle-exclamation"></i>Can't Enter an Empty
+          Tweet!<i class="fa-solid fa-triangle-exclamation"></i
+        ></label>
+        <label for="errorOverLimit" class="errorOverLimit"
+          ><i class="fa-solid fa-triangle-exclamation"></i>Can't Enter a Tweet
+          Over 140 Characters!<i class="fa-solid fa-triangle-exclamation"></i
+        ></label>
+      </section>
+
+      <section class="new-tweet">
+        <form method="POST" action="/tweets">
+          <label for="tweet-text">What are you thinking about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="tweetControl">
+            <button type="submit">Chirp</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <!-- ajax filled container -->
+      <section class="tweet-container"></section>
+
+      <div class="toggleButton">
+        <i class="fa-solid fa-circle-chevron-up"></i>
+      </div>
+    </main>
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
+    <script type="text/javascript" src="/scripts/composer.js"></script>
+  </body>
+</html>
+
+<!--
+  Implementation of Sass:
+    Edwin, S. (2019) Learn sass in 20 minutes | Sass Crash course, YouTube. Available at: https://www.youtube.com/watch?v=Zz6eOVaaelI&amp;ab_channel=developedbyed. 
+    CODEstackr (2019) Sass tutorial for beginners - CSS with superpowers, YouTube. Available at: https://www.youtube.com/watch?v=_a5j7KoflTs&amp;ab_channel=freeCodeCamp.org. 
+    w3schools, Sass introduction. Available at: https://www.w3schools.com/sass/sass_intro.php. 
+  
+  Using jQuery:
+    w3schools, jQuery Tutorial. Available at: https://www.w3schools.com/jquery/.
+  
+  ChanceJS:
+    chancejs , Prefix, Chance. Available at: https://chancejs.com/person/prefix.html. 
+-->

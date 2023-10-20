@@ -1,0 +1,116 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  padding-top: 120px;
+}
+
+/*
+* Additional CSS can be defined below or in other CSS files, as per instructions
+*/
+.toggleButton {
+  color: #4056a1;
+  left: 93.5vw;
+  top: 93.5vh;
+  z-index: 100;
+  position: fixed;
+  transform: scale(3);
+  cursor: pointer;
+}
+
+.invalidTweet {
+  color: red;
+}
+
+.tweetControl {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: "Bungee", cursive;
+  font-size: 24px;
+}
+.tweetControl button {
+  background-color: #4056a1;
+  color: #ffffff;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+.tweetControl button:hover {
+  box-shadow: 5px 5px #545149;
+}
+
+#tweet-text {
+  background-color: transparent;
+  width: 100%;
+  overflow: auto;
+  outline: none;
+  resize: none;
+  border-style: none;
+  border-bottom: 5px solid #545149;
+}
+
+.errorEmpty,
+.errorOverLimit {
+  color: red;
+  font-weight: bolder;
+  border: 5px solid red;
+  padding: 10px;
+  margin: 10px;
+}
+
+.errorMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-tweet {
+  width: 100%;
+  padding: 1.5em;
+}
+.new-tweet label {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+}
+
+main {
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  margin: auto;
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .new-tweet {
+    padding-top: 0;
+  }
+}
